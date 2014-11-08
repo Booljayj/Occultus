@@ -3,6 +3,7 @@ using UnityEngine.Events;
 using System.Collections;
 using System.Collections.Generic;
 
+[ExecuteInEditMode]
 public class ZoneManager : MonoBehaviour {
 	public List<Zone> zones = new List<Zone>();
 	[SerializeField] List<Zone> activated = new List<Zone>();
@@ -12,42 +13,72 @@ public class ZoneManager : MonoBehaviour {
 		get {return _current;}
 	}
 
-	void OnEnable() {
+	void Awake() {
 		zones.Clear();
-		GetComponentsInChildren<Zone>(zones);
+		GetComponentsInChildren<Zone>(true, zones);
+
 		foreach (Zone z in zones) z.Deactivate();
 		activated.Clear();
 	}
 
 	public void SetCurrent(Zone zone, bool resetPosition = false) {
-		//deactivate all zones to prepare for the new configuration
-		foreach (Zone z in activated) {
-			z.Deactivate();
-		}
-		activated.Clear();
-
-		//set the new zone as current
+		DeactivateAll();
+		
 		_current = zone;
 
 		if (resetPosition) {
-			//move the current zone to 0,0,0 with no rotation
 			_current.transform.position = Vector3.zero;
 			_current.transform.rotation = Quaternion.identity;
 		}
 
-		//activate the current zone
-		_current.Activate();
-		activated.Add(_current);
-		//activate all markers on the current zone
-		foreach (ZoneMarker m in _current.markers) {
-			//attempt to activate the marker
-			_current.ActivateMarker(m);
-			#if UNITY_EDITOR
-			if (m.zone) activated.Add(m.zone);
-			#else
-			activated.Add(m.zone);
-			#endif
+		Activate(zone);
+		ActivateMarkers(zone);
+	}
+
+	public void Activate(Zone z) {
+		if (!activated.Contains(z)) {
+			z.Activate();
+			activated.Add(z);
 		}
+	}
+
+	public void ActivateMarkers(Zone z, int index = -1) {
+		if (index >= 0) {
+			if (index < z.markers.Count - 1) {
+				ActivateMarker(z, z.markers[index]);
+			} else {
+				Debug.LogError(string.Format("Index out of range, index: {0}, zone: {1}", index, z.name));
+			}
+		} else {
+			foreach (ZoneMarker m in z.markers) {
+				ActivateMarker(z, m);
+			}
+		}
+	}
+
+	void ActivateMarker(Zone z, ZoneMarker m) {
+		if (m.zone && m.zone != z) {
+			Activate(m.zone);
+			m.zone.transform.position = z.transform.TransformPoint(m.position);
+			m.zone.transform.rotation = z.transform.rotation * Quaternion.Euler(m.rotation);
+		} else {
+			Debug.LogWarning(string.Format("Invalid ZoneMarker detected on {0}", z.name));
+		}
+	}
+
+	public void Deactivate(Zone z) {
+		if (activated.Remove(z)) {
+			z.Deactivate();
+			if (z == _current) _current = null;
+		}
+	}
+
+	public void DeactivateAll() {
+		foreach (Zone z in activated) {
+			if (z) z.Deactivate();
+		}
+		activated.Clear();
+		_current = null;
 	}
 
 	public Zone FindByName(string name) {

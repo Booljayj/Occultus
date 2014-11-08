@@ -14,10 +14,12 @@ public class ZoneTrigger : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other) {
+		Debug.Log("Collision");
 		if (list == null) {
-			return;
+			Debug.Log("Could not activate zone");
 		} else {
 			if (other.tag == "Player") {
+				Debug.Log("Activating Zone");
 				list.Triggered();
 			}
 		}

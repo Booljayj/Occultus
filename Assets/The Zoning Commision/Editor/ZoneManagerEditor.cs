@@ -40,16 +40,18 @@ public class ZoneManagerEditor : Editor {
 			//visibility button
 			if (element.gameObject.activeSelf) {
 				if (GUI.Button(visibilityRect, EditorGUIUtility.IconContent("ViewToolOrbit On", "Hide Zone"), EditorStyles.whiteLargeLabel)) {
-					element.Deactivate();
+					manager.Deactivate(element);
 				}
 			} else {
 				if (GUI.Button(visibilityRect, EditorGUIUtility.IconContent("ViewToolOrbit", "Show Zone"), EditorStyles.whiteLargeLabel)) {
-					element.Activate();
+					manager.Activate(element);
 				}
 			}
 		};
 
 		zones.onAddCallback = (ReorderableList l) => {
+			ReorderableList.defaultBehaviours.DoAddButton(l);
+
 			GameObject newZone = CreateObject("New Zone", manager.gameObject, false, typeof(Zone));
 			CreateObject("Triggers", newZone, true, typeof(ZoneTriggerFactory));
 			CreateObject("Navigation", newZone, true);
@@ -58,22 +60,17 @@ public class ZoneManagerEditor : Editor {
 
 			Undo.RegisterCreatedObjectUndo(newZone, "Create New Zone");
 
-			manager.zones.Add(newZone.GetComponent<Zone>());
-			EditorUtility.SetDirty(manager);
+			l.serializedProperty.GetArrayElementAtIndex(l.count-1).objectReferenceValue = newZone.GetComponent<Zone>() as Object;
 		};
 
 		zones.onRemoveCallback = (ReorderableList l) => {
-			if (l.index < 0 || l.index > l.count - 1) {
-				l.index = l.count - 1;
-			}
-
 			Zone element = l.serializedProperty.GetArrayElementAtIndex(l.index).objectReferenceValue as Zone;
-
 			if (element) {
 				DestroyImmediate(element.gameObject);
-			} else {
-				l.serializedProperty.DeleteArrayElementAtIndex(l.index);
+				ReorderableList.defaultBehaviours.DoRemoveButton(l);
 			}
+
+			ReorderableList.defaultBehaviours.DoRemoveButton(l);
 		};
 
 		zones.onSelectCallback = (ReorderableList l) => {
@@ -98,13 +95,11 @@ public class ZoneManagerEditor : Editor {
 		EditorGUILayout.BeginHorizontal();
 		if (GUILayout.Button("Show All")) {
 			foreach (Zone z in manager.zones) {
-				z.Activate();
+				manager.Activate(z);
 			}
 		}
 		if (GUILayout.Button("Hide All")) {
-			foreach (Zone z in manager.zones) {
-				z.Deactivate();
-			}
+			manager.DeactivateAll();
 		}
 		EditorGUILayout.EndHorizontal();
 
