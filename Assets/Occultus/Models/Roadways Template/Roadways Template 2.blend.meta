@@ -1,0 +1,115 @@
+fileFormatVersion: 2
+guid: 0a424fa449f544f7f93e2a731d8ce344
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Border
+    100002: Corner-L
+    100004: Profile-L
+    100006: Profile-M
+    100008: Profile-S
+    100010: //RootNode
+    100012: Straight-L
+    100014: Tee-L
+    100016: Intersection-L
+    100018: Rotate-90
+    100020: Intersection-L_001
+    100022: Straight-L_001
+    400000: Border
+    400002: Corner-L
+    400004: Profile-L
+    400006: Profile-M
+    400008: Profile-S
+    400010: //RootNode
+    400012: Straight-L
+    400014: Tee-L
+    400016: Intersection-L
+    400018: Rotate-90
+    400020: Intersection-L_001
+    400022: Straight-L_001
+    2300000: Border
+    2300002: Corner-L
+    2300004: Profile-L
+    2300006: Profile-M
+    2300008: Profile-S
+    2300010: Straight-L
+    2300012: Tee-L
+    2300014: Intersection-L
+    2300016: Intersection-L_001
+    2300018: Straight-L_001
+    3300000: Border
+    3300002: Corner-L
+    3300004: Profile-L
+    3300006: Profile-M
+    3300008: Profile-S
+    3300010: Straight-L
+    3300012: Tee-L
+    3300014: Intersection-L
+    3300016: Intersection-L_001
+    3300018: Straight-L_001
+    4300000: Tee-L
+    4300002: Corner-L
+    4300004: Straight-L
+    4300006: Border
+    4300008: Profile-S
+    4300010: Profile-M
+    4300012: Profile-L
+    4300014: Intersection-L
+    4300016: Straight-L_001
+    4300018: Intersection-L_001
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 12
+    splitTangentsAcrossUV: 1
+    normalImportMode: 1
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 

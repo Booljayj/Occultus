@@ -6,7 +6,11 @@ using System.Collections.Generic;
 [ExecuteInEditMode]
 public class ZoneManager : MonoBehaviour {
 	public List<Zone> zones = new List<Zone>();
-	[SerializeField] List<Zone> activated = new List<Zone>();
+	
+	[SerializeField] List<Zone> _activated = new List<Zone>();
+	public List<Zone> activated {
+		get {return _activated;}
+	}
 
 	[SerializeField] Zone _current;
 	public Zone current {
@@ -18,7 +22,7 @@ public class ZoneManager : MonoBehaviour {
 		GetComponentsInChildren<Zone>(true, zones);
 
 		foreach (Zone z in zones) z.Deactivate();
-		activated.Clear();
+		_activated.Clear();
 	}
 
 	public void SetCurrent(Zone zone, bool resetPosition = false) {
@@ -36,15 +40,15 @@ public class ZoneManager : MonoBehaviour {
 	}
 
 	public void Activate(Zone z) {
-		if (!activated.Contains(z)) {
+		if (!_activated.Contains(z)) {
 			z.Activate();
-			activated.Add(z);
+			_activated.Add(z);
 		}
 	}
 
 	public void ActivateMarkers(Zone z, int index = -1) {
 		if (index >= 0) {
-			if (index < z.markers.Count - 1) {
+			if (index < z.markers.Count) {
 				ActivateMarker(z, z.markers[index]);
 			} else {
 				Debug.LogError(string.Format("Index out of range, index: {0}, zone: {1}", index, z.name));
@@ -67,17 +71,17 @@ public class ZoneManager : MonoBehaviour {
 	}
 
 	public void Deactivate(Zone z) {
-		if (activated.Remove(z)) {
+		if (_activated.Remove(z)) {
 			z.Deactivate();
 			if (z == _current) _current = null;
 		}
 	}
 
 	public void DeactivateAll() {
-		foreach (Zone z in activated) {
+		foreach (Zone z in _activated) {
 			if (z) z.Deactivate();
 		}
-		activated.Clear();
+		_activated.Clear();
 		_current = null;
 	}
 

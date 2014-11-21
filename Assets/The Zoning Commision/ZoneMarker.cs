@@ -10,4 +10,8 @@ public class ZoneMarker {
 
 	public Vector3 position;
 	public Vector3 rotation;
+
+	public ZoneMarker(Zone z) {
+		_zone = z;
+	}
 }

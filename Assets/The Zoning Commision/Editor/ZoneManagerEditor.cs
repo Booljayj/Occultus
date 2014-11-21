@@ -9,6 +9,8 @@ public class ZoneManagerEditor : Editor {
 	ZoneManager manager;
 	ReorderableList zones;
 
+	bool resetPosition;
+
 	void OnEnable() {
 		manager = target as ZoneManager;
 
@@ -29,11 +31,11 @@ public class ZoneManagerEditor : Editor {
 			//current button
 			if (manager.current == element) {
 				if (GUI.Button(currentRect, EditorGUIUtility.IconContent("PlayButton On", "Refresh Current"), EditorStyles.whiteLargeLabel)) {
-					manager.SetCurrent(element, true);
+					manager.SetCurrent(element, resetPosition);
 				}
 			} else {
 				if (GUI.Button(currentRect, EditorGUIUtility.IconContent("PlayButton", "Set As Current"), EditorStyles.whiteLargeLabel)) {
-					manager.SetCurrent(element, true);
+					manager.SetCurrent(element, resetPosition);
 				}
 			}
 			
@@ -91,6 +93,8 @@ public class ZoneManagerEditor : Editor {
 //			EditorGUILayout.LabelField(pair.Value as GUIContent);
 //			EditorGUILayout.EndHorizontal();
 //		}
+
+		resetPosition = EditorGUILayout.Toggle(resetPosition);
 
 		EditorGUILayout.BeginHorizontal();
 		if (GUILayout.Button("Show All")) {
