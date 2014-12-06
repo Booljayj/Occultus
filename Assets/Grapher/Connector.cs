@@ -11,12 +11,14 @@ public class Connector : MonoBehaviour {
 		public ConnectionType type;
 		[Range(-1, 1)] public float pos;
 		[Range(0, 10)] public float weight;
+		public Color color;
 	}
 
 	public ConnectionPoint start, end;
 
 	LineRenderer line;
 	Vector3 p1, c1, p2, c2;
+	bool sleep;
 
 	static int vertices = 24;
 
@@ -33,12 +35,33 @@ public class Connector : MonoBehaviour {
 	}
 
 	void OnValidate() {
+		if (!line) return;
+
 		if (start.trans && end.trans) {
+			line.enabled = true;
 			UpdateCurve();
+		} else {
+			line.enabled = false;
 		}
 	}
 
 	void UpdateCurve() {
+		bool startActive = start.trans.gameObject.activeInHierarchy;
+		bool endActive = end.trans.gameObject.activeInHierarchy;
+
+		if (!startActive && !endActive) {
+			line.enabled = false;
+		} else {
+			line.enabled = true;
+			if (startActive && !endActive) {
+				line.SetColors(start.color, Color.clear);
+			} else if (!startActive && endActive) {
+				line.SetColors(Color.clear, end.color);
+			} else {
+				line.SetColors(start.color, end.color);
+			}
+		}
+
 		CalculatePoints(start, ref p1, ref c1);
 		CalculatePoints(end, ref p2, ref c2);
 
@@ -70,8 +93,8 @@ public class Connector : MonoBehaviour {
 
 	void CalculatePoints(ConnectionPoint conn, ref Vector3 p, ref Vector3 c) {
 		if (conn.type == ConnectionType.North) {
-			p = conn.trans.TransformPoint(conn.trans.sizeDelta.x/2f * conn.pos,
-			                          conn.trans.sizeDelta.y/2f,
+			p = conn.trans.TransformPoint(conn.trans.rect.width/2f * conn.pos,
+			                          conn.trans.rect.height/2f,
 			                          0);
 			c = p + conn.trans.up*conn.weight;
 
