@@ -1491,7 +1491,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &202841841
 Transform:
   m_ObjectHideFlags: 0
@@ -4251,7 +4251,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &740212775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5803,7 +5803,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1023287313
 Transform:
   m_ObjectHideFlags: 0
@@ -5849,7 +5849,7 @@ MonoBehaviour:
     rotation: {x: -0, y: 0, z: 0}
   - _zone: {fileID: 1620089541}
     position: {x: 0, y: 0, z: 270}
-    rotation: {x: -0, y: 90.0000076, z: 0}
+    rotation: {x: -0, y: 90, z: 0}
   OnActivate:
     m_PersistentCalls:
       m_Calls: []
@@ -8726,7 +8726,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1477845169
 Transform:
   m_ObjectHideFlags: 0
@@ -9616,14 +9616,14 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1620089540
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1620089539}
-  m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106709}
+  m_LocalRotation: {x: 0, y: .707106829, z: 0, w: .707106829}
   m_LocalPosition: {x: 0, y: 0, z: 270}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -11494,7 +11494,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1951387769
 Transform:
   m_ObjectHideFlags: 0
@@ -11604,7 +11604,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1957274665
 Transform:
   m_ObjectHideFlags: 0
@@ -11778,7 +11778,14 @@ MonoBehaviour:
   - {fileID: 651828330}
   - {fileID: 740212775}
   - {fileID: 1620089541}
-  _activated: []
+  _activated:
+  - {fileID: 1023287314}
+  - {fileID: 1477845170}
+  - {fileID: 202841842}
+  - {fileID: 1951387770}
+  - {fileID: 1957274666}
+  - {fileID: 740212775}
+  - {fileID: 1620089541}
   _current: {fileID: 1023287314}
 --- !u!114 &1960943212
 MonoBehaviour:
