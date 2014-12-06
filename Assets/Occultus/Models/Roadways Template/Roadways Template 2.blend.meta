@@ -15,6 +15,28 @@ ModelImporter:
     100018: Rotate-90
     100020: Intersection-L_001
     100022: Straight-L_001
+    100024: Corner-M
+    100026: Corner-S
+    100028: End-L
+    100030: End-M
+    100032: Intersection-LxL
+    100034: Intersection-LxM
+    100036: Intersection-LxS
+    100038: Intersection-MxM
+    100040: Intersection-MxS
+    100042: Intersection-SxS
+    100044: Piece-Transition-MxS
+    100046: Straight-M
+    100048: Straight-S
+    100050: Tee-LxL
+    100052: Tee-LxM
+    100054: Tee-LxS
+    100056: Tee-MxL
+    100058: Tee-MxM
+    100060: Tee-MxS
+    100062: Tee-SxL
+    100064: Tee-SxM
+    100066: Tee-SxS
     400000: Border
     400002: Corner-L
     400004: Profile-L
@@ -27,6 +49,28 @@ ModelImporter:
     400018: Rotate-90
     400020: Intersection-L_001
     400022: Straight-L_001
+    400024: Corner-M
+    400026: Corner-S
+    400028: End-L
+    400030: End-M
+    400032: Intersection-LxL
+    400034: Intersection-LxM
+    400036: Intersection-LxS
+    400038: Intersection-MxM
+    400040: Intersection-MxS
+    400042: Intersection-SxS
+    400044: Piece-Transition-MxS
+    400046: Straight-M
+    400048: Straight-S
+    400050: Tee-LxL
+    400052: Tee-LxM
+    400054: Tee-LxS
+    400056: Tee-MxL
+    400058: Tee-MxM
+    400060: Tee-MxS
+    400062: Tee-SxL
+    400064: Tee-SxM
+    400066: Tee-SxS
     2300000: Border
     2300002: Corner-L
     2300004: Profile-L
@@ -37,6 +81,28 @@ ModelImporter:
     2300014: Intersection-L
     2300016: Intersection-L_001
     2300018: Straight-L_001
+    2300020: Corner-M
+    2300022: Corner-S
+    2300024: End-L
+    2300026: End-M
+    2300028: Intersection-LxL
+    2300030: Intersection-LxM
+    2300032: Intersection-LxS
+    2300034: Intersection-MxM
+    2300036: Intersection-MxS
+    2300038: Intersection-SxS
+    2300040: Piece-Transition-MxS
+    2300042: Straight-M
+    2300044: Straight-S
+    2300046: Tee-LxL
+    2300048: Tee-LxM
+    2300050: Tee-LxS
+    2300052: Tee-MxL
+    2300054: Tee-MxM
+    2300056: Tee-MxS
+    2300058: Tee-SxL
+    2300060: Tee-SxM
+    2300062: Tee-SxS
     3300000: Border
     3300002: Corner-L
     3300004: Profile-L
@@ -47,6 +113,28 @@ ModelImporter:
     3300014: Intersection-L
     3300016: Intersection-L_001
     3300018: Straight-L_001
+    3300020: Corner-M
+    3300022: Corner-S
+    3300024: End-L
+    3300026: End-M
+    3300028: Intersection-LxL
+    3300030: Intersection-LxM
+    3300032: Intersection-LxS
+    3300034: Intersection-MxM
+    3300036: Intersection-MxS
+    3300038: Intersection-SxS
+    3300040: Piece-Transition-MxS
+    3300042: Straight-M
+    3300044: Straight-S
+    3300046: Tee-LxL
+    3300048: Tee-LxM
+    3300050: Tee-LxS
+    3300052: Tee-MxL
+    3300054: Tee-MxM
+    3300056: Tee-MxS
+    3300058: Tee-SxL
+    3300060: Tee-SxM
+    3300062: Tee-SxS
     4300000: Tee-L
     4300002: Corner-L
     4300004: Straight-L
@@ -57,6 +145,28 @@ ModelImporter:
     4300014: Intersection-L
     4300016: Straight-L_001
     4300018: Intersection-L_001
+    4300020: Tee-SxS
+    4300022: Tee-SxM
+    4300024: Tee-SxL
+    4300026: Tee-MxS
+    4300028: Tee-MxM
+    4300030: Tee-MxL
+    4300032: Intersection-SxS
+    4300034: Intersection-MxS
+    4300036: Intersection-MxM
+    4300038: Intersection-LxS
+    4300040: Tee-LxS
+    4300042: Piece-Transition-MxS
+    4300044: Corner-S
+    4300046: Straight-S
+    4300048: End-M
+    4300050: Intersection-LxM
+    4300052: Tee-LxM
+    4300054: Corner-M
+    4300056: Straight-M
+    4300058: End-L
+    4300060: Tee-LxL
+    4300062: Intersection-LxL
     7400000: Default Take
     9500000: //RootNode
   materials:
