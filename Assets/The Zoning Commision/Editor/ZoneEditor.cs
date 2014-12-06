@@ -13,7 +13,7 @@ public class ZoneEditor : Editor {
 
 	SerializedProperty OnActivate, OnDeactivate;
 
-	bool liveMarkerEditing;
+	bool editing;
 
 	void OnEnable() {
 		zone = target as Zone;
@@ -21,46 +21,65 @@ public class ZoneEditor : Editor {
 		OnActivate = serializedObject.FindProperty("OnActivate");
 		OnDeactivate = serializedObject.FindProperty("OnDeactivate");
 
-		markerlist = new ReorderableList(serializedObject, serializedObject.FindProperty("_markers"));
+		markerlist = new ReorderableList(serializedObject, serializedObject.FindProperty("_markers"), false, true, false, false);
 		markerlist.elementHeight = EditorGUIUtility.singleLineHeight*3f;
 
 		markerlist.drawElementCallback = (Rect rect, int index, bool isActive, bool isFocused) => {
-			rect.height = EditorGUIUtility.singleLineHeight;
-			Rect zoneRect = new Rect(rect.x, rect.y, rect.width, rect.height);
-			Rect posRect = new Rect(rect.x+10f, rect.y + rect.height, rect.width-10f, rect.height);
-			Rect rotRect = new Rect(rect.x+10f, rect.y + rect.height*2f, rect.width-10f, rect.height);
+			float single = EditorGUIUtility.singleLineHeight;
+			Rect zoneRect = new Rect(rect.x, rect.y, rect.width - 40f, single);
+			Rect syncRect = new Rect(rect.x + rect.width - 40f, rect.y, 40f, single);
+			Rect posRect = new Rect(rect.x+10f, rect.y + single, rect.width-10f, single);
+			Rect rotRect = new Rect(rect.x+10f, rect.y + single*2f, rect.width-10f, single);
 
 			SerializedProperty element = markerlist.serializedProperty.GetArrayElementAtIndex(index);
 			SerializedProperty _zone = element.FindPropertyRelative("_zone");
 			SerializedProperty position = element.FindPropertyRelative("position");
 			SerializedProperty rotation = element.FindPropertyRelative("rotation");
 
-			EditorGUI.BeginDisabledGroup(liveMarkerEditing);
-			EditorGUI.PropertyField(zoneRect, element.FindPropertyRelative("_zone"), GUIContent.none);
-			EditorGUI.EndDisabledGroup();
-
+			EditorGUI.BeginDisabledGroup(!editing);
 			if (_zone.objectReferenceValue) {
-				if (liveMarkerEditing) {
-					other = _zone.objectReferenceValue as Zone;
+				EditorGUI.PropertyField(zoneRect, _zone, GUIContent.none);
+				other = _zone.objectReferenceValue as Zone;
+
+				if (GUI.Button(syncRect, "Sync", EditorStyles.miniButton)) {
+					SyncMarker(other);
+				}
+
+				if (editing && other.transform.hasChanged) {
 					position.vector3Value = other.transform.position;
 					rotation.vector3Value = other.transform.eulerAngles;
 				}
 
-				if (liveMarkerEditing) EditorGUI.BeginChangeCheck();
+				if (editing) EditorGUI.BeginChangeCheck();
 				EditorGUI.PropertyField(posRect, element.FindPropertyRelative("position"), GUIContent.none);
 				EditorGUI.PropertyField(rotRect, element.FindPropertyRelative("rotation"), GUIContent.none);
-				if (liveMarkerEditing && EditorGUI.EndChangeCheck()) {
+				if (editing && EditorGUI.EndChangeCheck()) {
 					other.transform.position = position.vector3Value;
 					other.transform.rotation = Quaternion.Euler(rotation.vector3Value);
+					other.transform.hasChanged = false;
 				}
+			} else {
+				EditorGUI.HelpBox(rect, "Zone Deleted", MessageType.Error);
 			}
+			EditorGUI.EndDisabledGroup();
 		};
 
 		markerlist.drawHeaderCallback = (Rect rect) => {
-			EditorGUI.LabelField(rect, "Markers", EditorStyles.miniLabel);
-//			if (GUI.Button(new Rect(rect.x + rect.width - 50f, rect.y, 50f, rect.height), "Refresh", EditorStyles.miniButton)) {
-//				zone.manager.ActivateMarkers(zone);
-//			}
+			Rect buttonRect = new Rect(rect.x, rect.y, 40f, rect.height);
+			Rect labelRect = new Rect(rect.x + rect.width - 40f, rect.y, 40f, rect.height);
+
+			EditorGUI.BeginChangeCheck();
+			if (editing) {
+				if (GUI.Button(buttonRect, "Done", EditorStyles.miniButton)) {
+					EndEditing();
+				}
+			} else {
+				if (GUI.Button(buttonRect, "Edit", EditorStyles.miniButton)) {
+					StartEditing();
+				}
+			}
+
+			EditorGUI.LabelField(labelRect, "Markers", EditorStyles.miniLabel);
 		};
 	}
 
@@ -82,20 +101,6 @@ public class ZoneEditor : Editor {
 
 		EditorGUILayout.Space();
 
-		EditorGUI.BeginChangeCheck();
-		liveMarkerEditing = EditorGUILayout.ToggleLeft("Live Editing", liveMarkerEditing);
-		if (EditorGUI.EndChangeCheck()) {
-			if (liveMarkerEditing) {
-				markerlist.displayAdd = false;
-				markerlist.displayRemove = false;
-				markerlist.draggable = false;
-				zone.manager.SetCurrent(zone, true);
-			} else {
-				markerlist.displayAdd = true;
-				markerlist.displayRemove = true;
-				markerlist.draggable = true;
-			}
-		}
 		markerlist.DoLayoutList();
 
 		serializedObject.ApplyModifiedProperties();
@@ -103,6 +108,36 @@ public class ZoneEditor : Editor {
 
 	void OnSceneGUI() {
 		Repaint();
+	}
+
+	void StartEditing() {
+		editing = true;
+		markerlist.draggable = true;
+		markerlist.displayAdd = true;
+		markerlist.displayRemove = true;
+		zone.manager.SetCurrent(zone, true);
+	}
+
+	void EndEditing() {
+		editing = false;
+		markerlist.draggable = false;
+		markerlist.displayAdd = false;
+		markerlist.displayRemove = false;
+	}
+
+	void SyncMarker(Zone other) {
+		ZoneMarker otherMarker = other.markers.Find(m => (m.zone == zone));
+		ZoneMarker selfMarker = zone.markers.Find(m => (m.zone == other));
+
+		if (otherMarker == null) {
+			otherMarker = new ZoneMarker(zone);
+			other.markers.Add(otherMarker);
+		}
+
+		otherMarker.position = -selfMarker.position;
+		otherMarker.rotation = -selfMarker.rotation;
+
+		EditorUtility.SetDirty(selfMarker.zone);
 	}
 
 	void AddActiveZones(Zone self) {
@@ -132,11 +167,5 @@ public class ZoneEditor : Editor {
 		}
 		//be sure to set as dirty!
 		EditorUtility.SetDirty(self);
-	}
-
-	void SynchronizeZone(Zone z) {
-		foreach (ZoneMarker m in z.markers) {
-
-		}
 	}
 }
