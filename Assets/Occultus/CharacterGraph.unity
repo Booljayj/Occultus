@@ -2213,7 +2213,7 @@ MonoBehaviour:
     type: 3
     pos: 0
     weight: 1
-    color: {r: 1, g: 0, b: 1, a: 1}
+    color: {r: .944827795, g: 1, b: 0, a: 1}
 --- !u!120 &1459747695
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -2268,7 +2268,7 @@ LineRenderer:
       rgba: 4294902015
     m_EndColor:
       serializedVersion: 2
-      rgba: 4294902015
+      rgba: 4278255601
   m_UseWorldSpace: 1
 --- !u!1 &1519544454
 GameObject:
@@ -2523,14 +2523,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Author: Justin\nGender: Female\nEthnicity: Asian/Caucasian\nSexual Orientation:
-    Straight\nHeight: 5'9\"\nAge: 46\nJob: Florist\n\n   Physical Description: Light
-    brown hair, streaks of grey, brown eyes, wears dirt-stained t-shirts and jeans.\n
-    \  Personality: Introverted, very loyal and loving to her family. Has low self-esteem,
-    but enjoys helping others, especially the elderly.\n   Daily Life: Does chores
-    for the elderly in the morning, works at flower shop in the afternoon. Often works
-    long hours.\n   Court Influence: Very drained. In a few years she will probably
-    become a husk.\n   Economics: Upper middle class\n   Additional Notes:"
+  m_Text: 
 --- !u!222 &1588570148
 CanvasRenderer:
   m_ObjectHideFlags: 0
