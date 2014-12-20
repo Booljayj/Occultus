@@ -5124,6 +5124,47 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1511477325}
   m_GameObject: {fileID: 877056724}
   m_Mesh: {fileID: 4300024, guid: 733679424835341f284386461f0c2bed, type: 3}
+--- !u!1 &908132150
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 908132152}
+  - 114: {fileID: 908132151}
+  m_Layer: 0
+  m_Name: TestPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &908132151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 908132150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27ddf6391126a4675a75bc62ba6809c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabs: []
+  poolSize: 50
+--- !u!4 &908132152
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 908132150}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.18957043, y: -19.0053234, z: 1.20422673}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
 --- !u!1001 &926555006
 Prefab:
   m_ObjectHideFlags: 0
