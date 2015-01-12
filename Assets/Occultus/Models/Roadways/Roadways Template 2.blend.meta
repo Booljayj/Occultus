@@ -38,6 +38,7 @@ ModelImporter:
     100064: Tee-SxM
     100066: Tee-SxS
     100068: End-S
+    100070: Straight-L_002
     400000: Border
     400002: Corner-L
     400004: Profile-L
@@ -73,6 +74,7 @@ ModelImporter:
     400064: Tee-SxM
     400066: Tee-SxS
     400068: End-S
+    400070: Straight-L_002
     2300000: Border
     2300002: Corner-L
     2300004: Profile-L
@@ -106,6 +108,7 @@ ModelImporter:
     2300060: Tee-SxM
     2300062: Tee-SxS
     2300064: End-S
+    2300066: Straight-L_002
     3300000: Border
     3300002: Corner-L
     3300004: Profile-L
@@ -139,6 +142,7 @@ ModelImporter:
     3300060: Tee-SxM
     3300062: Tee-SxS
     3300064: End-S
+    3300066: Straight-L_002
     4300000: Tee-L
     4300002: Corner-L
     4300004: Straight-L
@@ -172,6 +176,7 @@ ModelImporter:
     4300060: Tee-LxL
     4300062: Intersection-LxL
     4300064: End-S
+    4300066: Straight-L_002
     6400000: Corner-L
     6400002: Corner-M
     6400004: Corner-S
@@ -200,6 +205,8 @@ ModelImporter:
     6400050: Tee-SxL
     6400052: Tee-SxM
     6400054: Tee-SxS
+    6400056: Straight-L_001
+    6400058: Straight-L_002
     7400000: Default Take
     9500000: //RootNode
   materials:

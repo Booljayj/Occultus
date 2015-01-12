@@ -17,6 +17,41 @@ ModelImporter:
     100022: Cube_011
     100024: //RootNode
     100026: Robot2
+    100028: Door
+    100030: Door-Frame
+    100032: Door-Frame-Dbl
+    100034: Door-Left
+    100036: Door-Right
+    100038: Floor
+    100040: Floor-Dbl
+    100042: Floor_001
+    100044: Handrail
+    100046: Handrail-Ccv
+    100048: Handrail-Cvx
+    100050: Railing
+    100052: Railing-Ccv
+    100054: Railing-Cvx
+    100056: Staircase-Btm-Left
+    100058: Staircase-Btm-Right
+    100060: Staircase-Corner-Left
+    100062: Staircase-Corner-Right
+    100064: Staircase-Hall
+    100066: Staircase-Side-Left
+    100068: Staircase-Side-Right
+    100070: Staircase-Top-Left
+    100072: Staircase-Top-Right
+    100074: Wall
+    100076: Wall-Corner
+    100078: Wall-Dbl
+    100080: Wall-Dbl_001
+    100082: Wall-Door
+    100084: Wall-Door-Dbl
+    100086: Wall-Slant
+    100088: Wall-Slant-Dbl
+    100090: Wall-Window
+    100092: Wall-Window-Dbl
+    100094: Window-Frame
+    100096: Window-Frame-Dbl
     400000: Cube
     400002: Cube_001
     400004: Cube_002
@@ -31,6 +66,41 @@ ModelImporter:
     400022: Cube_011
     400024: //RootNode
     400026: Robot2
+    400028: Door
+    400030: Door-Frame
+    400032: Door-Frame-Dbl
+    400034: Door-Left
+    400036: Door-Right
+    400038: Floor
+    400040: Floor-Dbl
+    400042: Floor_001
+    400044: Handrail
+    400046: Handrail-Ccv
+    400048: Handrail-Cvx
+    400050: Railing
+    400052: Railing-Ccv
+    400054: Railing-Cvx
+    400056: Staircase-Btm-Left
+    400058: Staircase-Btm-Right
+    400060: Staircase-Corner-Left
+    400062: Staircase-Corner-Right
+    400064: Staircase-Hall
+    400066: Staircase-Side-Left
+    400068: Staircase-Side-Right
+    400070: Staircase-Top-Left
+    400072: Staircase-Top-Right
+    400074: Wall
+    400076: Wall-Corner
+    400078: Wall-Dbl
+    400080: Wall-Dbl_001
+    400082: Wall-Door
+    400084: Wall-Door-Dbl
+    400086: Wall-Slant
+    400088: Wall-Slant-Dbl
+    400090: Wall-Window
+    400092: Wall-Window-Dbl
+    400094: Window-Frame
+    400096: Window-Frame-Dbl
     2300000: Cube
     2300002: Cube_001
     2300004: Cube_002
@@ -44,6 +114,41 @@ ModelImporter:
     2300020: Cube_010
     2300022: Cube_011
     2300024: Robot2
+    2300026: Door
+    2300028: Door-Frame
+    2300030: Door-Frame-Dbl
+    2300032: Door-Left
+    2300034: Door-Right
+    2300036: Floor
+    2300038: Floor-Dbl
+    2300040: Floor_001
+    2300042: Handrail
+    2300044: Handrail-Ccv
+    2300046: Handrail-Cvx
+    2300048: Railing
+    2300050: Railing-Ccv
+    2300052: Railing-Cvx
+    2300054: Staircase-Btm-Left
+    2300056: Staircase-Btm-Right
+    2300058: Staircase-Corner-Left
+    2300060: Staircase-Corner-Right
+    2300062: Staircase-Hall
+    2300064: Staircase-Side-Left
+    2300066: Staircase-Side-Right
+    2300068: Staircase-Top-Left
+    2300070: Staircase-Top-Right
+    2300072: Wall
+    2300074: Wall-Corner
+    2300076: Wall-Dbl
+    2300078: Wall-Dbl_001
+    2300080: Wall-Door
+    2300082: Wall-Door-Dbl
+    2300084: Wall-Slant
+    2300086: Wall-Slant-Dbl
+    2300088: Wall-Window
+    2300090: Wall-Window-Dbl
+    2300092: Window-Frame
+    2300094: Window-Frame-Dbl
     3300000: Cube
     3300002: Cube_001
     3300004: Cube_002
@@ -57,6 +162,41 @@ ModelImporter:
     3300020: Cube_010
     3300022: Cube_011
     3300024: Robot2
+    3300026: Door
+    3300028: Door-Frame
+    3300030: Door-Frame-Dbl
+    3300032: Door-Left
+    3300034: Door-Right
+    3300036: Floor
+    3300038: Floor-Dbl
+    3300040: Floor_001
+    3300042: Handrail
+    3300044: Handrail-Ccv
+    3300046: Handrail-Cvx
+    3300048: Railing
+    3300050: Railing-Ccv
+    3300052: Railing-Cvx
+    3300054: Staircase-Btm-Left
+    3300056: Staircase-Btm-Right
+    3300058: Staircase-Corner-Left
+    3300060: Staircase-Corner-Right
+    3300062: Staircase-Hall
+    3300064: Staircase-Side-Left
+    3300066: Staircase-Side-Right
+    3300068: Staircase-Top-Left
+    3300070: Staircase-Top-Right
+    3300072: Wall
+    3300074: Wall-Corner
+    3300076: Wall-Dbl
+    3300078: Wall-Dbl_001
+    3300080: Wall-Door
+    3300082: Wall-Door-Dbl
+    3300084: Wall-Slant
+    3300086: Wall-Slant-Dbl
+    3300088: Wall-Window
+    3300090: Wall-Window-Dbl
+    3300092: Window-Frame
+    3300094: Window-Frame-Dbl
     4300000: Robot2
     4300002: Cube_011
     4300004: Cube_010
@@ -70,6 +210,41 @@ ModelImporter:
     4300020: Cube_002
     4300022: Cube_001
     4300024: Cube
+    4300026: Wall-Dbl_001
+    4300028: Floor_001
+    4300030: Wall-Slant-Dbl
+    4300032: Wall-Slant
+    4300034: Window-Frame-Dbl
+    4300036: Wall-Window-Dbl
+    4300038: Door-Frame-Dbl
+    4300040: Door-Left
+    4300042: Door-Right
+    4300044: Window-Frame
+    4300046: Staircase-Btm-Left
+    4300048: Staircase-Top-Left
+    4300050: Staircase-Corner-Left
+    4300052: Staircase-Side-Left
+    4300054: Staircase-Top-Right
+    4300056: Staircase-Btm-Right
+    4300058: Handrail-Cvx
+    4300060: Handrail-Ccv
+    4300062: Handrail
+    4300064: Floor-Dbl
+    4300066: Wall-Door-Dbl
+    4300068: Railing-Ccv
+    4300070: Railing-Cvx
+    4300072: Railing
+    4300074: Wall-Dbl
+    4300076: Wall-Corner
+    4300078: Door-Frame
+    4300080: Door
+    4300082: Staircase-Side-Right
+    4300084: Staircase-Corner-Right
+    4300086: Staircase-Hall
+    4300088: Wall-Window
+    4300090: Wall-Door
+    4300092: Wall
+    4300094: Floor
     7400000: Default Take
     9500000: //RootNode
   materials:
