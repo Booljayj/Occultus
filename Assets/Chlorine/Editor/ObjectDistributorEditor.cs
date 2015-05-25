@@ -66,6 +66,7 @@ public class ObjectDistributorEditor : Editor {
 		EditorGUILayout.EndHorizontal();
 		EditorGUI.EndDisabledGroup();
 
+		GUI.enabled = false;
 		positionList.DoLayoutList();
 
 		serializedObject.ApplyModifiedProperties();

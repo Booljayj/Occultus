@@ -39,6 +39,25 @@ ModelImporter:
     100066: Tee-SxS
     100068: End-S
     100070: Straight-L_002
+    100072: Plane
+    100074: Plane_001
+    100076: Plane_002
+    100078: Straight-L_003
+    100080: Straight-L_004
+    100082: Straight-L_005
+    100084: Straight-L_006
+    100086: Straight-L_007
+    100088: Straight-M_001
+    100090: Straight-M_002
+    100092: Straight-M_003
+    100094: Straight-S_001
+    100096: Straight-S_002
+    100098: Straight-S_003
+    100100: Straight-S_004
+    100102: Straight-S_005
+    100104: Tee-LxL_001
+    100106: Tee-MxM_001
+    100108: Tee-SxS_001
     400000: Border
     400002: Corner-L
     400004: Profile-L
@@ -75,6 +94,25 @@ ModelImporter:
     400066: Tee-SxS
     400068: End-S
     400070: Straight-L_002
+    400072: Plane
+    400074: Plane_001
+    400076: Plane_002
+    400078: Straight-L_003
+    400080: Straight-L_004
+    400082: Straight-L_005
+    400084: Straight-L_006
+    400086: Straight-L_007
+    400088: Straight-M_001
+    400090: Straight-M_002
+    400092: Straight-M_003
+    400094: Straight-S_001
+    400096: Straight-S_002
+    400098: Straight-S_003
+    400100: Straight-S_004
+    400102: Straight-S_005
+    400104: Tee-LxL_001
+    400106: Tee-MxM_001
+    400108: Tee-SxS_001
     2300000: Border
     2300002: Corner-L
     2300004: Profile-L
@@ -109,6 +147,25 @@ ModelImporter:
     2300062: Tee-SxS
     2300064: End-S
     2300066: Straight-L_002
+    2300068: Plane
+    2300070: Plane_001
+    2300072: Plane_002
+    2300074: Straight-L_003
+    2300076: Straight-L_004
+    2300078: Straight-L_005
+    2300080: Straight-L_006
+    2300082: Straight-L_007
+    2300084: Straight-M_001
+    2300086: Straight-M_002
+    2300088: Straight-M_003
+    2300090: Straight-S_001
+    2300092: Straight-S_002
+    2300094: Straight-S_003
+    2300096: Straight-S_004
+    2300098: Straight-S_005
+    2300100: Tee-LxL_001
+    2300102: Tee-MxM_001
+    2300104: Tee-SxS_001
     3300000: Border
     3300002: Corner-L
     3300004: Profile-L
@@ -143,6 +200,25 @@ ModelImporter:
     3300062: Tee-SxS
     3300064: End-S
     3300066: Straight-L_002
+    3300068: Plane
+    3300070: Plane_001
+    3300072: Plane_002
+    3300074: Straight-L_003
+    3300076: Straight-L_004
+    3300078: Straight-L_005
+    3300080: Straight-L_006
+    3300082: Straight-L_007
+    3300084: Straight-M_001
+    3300086: Straight-M_002
+    3300088: Straight-M_003
+    3300090: Straight-S_001
+    3300092: Straight-S_002
+    3300094: Straight-S_003
+    3300096: Straight-S_004
+    3300098: Straight-S_005
+    3300100: Tee-LxL_001
+    3300102: Tee-MxM_001
+    3300104: Tee-SxS_001
     4300000: Tee-L
     4300002: Corner-L
     4300004: Straight-L
@@ -177,6 +253,25 @@ ModelImporter:
     4300062: Intersection-LxL
     4300064: End-S
     4300066: Straight-L_002
+    4300068: Straight-S_005
+    4300070: Plane_002
+    4300072: Plane_001
+    4300074: Plane
+    4300076: Straight-L_007
+    4300078: Straight-L_006
+    4300080: Straight-L_005
+    4300082: Tee-SxS_001
+    4300084: Tee-MxM_001
+    4300086: Tee-LxL_001
+    4300088: Straight-S_004
+    4300090: Straight-M_003
+    4300092: Straight-L_004
+    4300094: Straight-S_003
+    4300096: Straight-L_003
+    4300098: Straight-S_002
+    4300100: Straight-M_002
+    4300102: Straight-S_001
+    4300104: Straight-M_001
     6400000: Corner-L
     6400002: Corner-M
     6400004: Corner-S
@@ -207,6 +302,25 @@ ModelImporter:
     6400054: Tee-SxS
     6400056: Straight-L_001
     6400058: Straight-L_002
+    6400060: Plane
+    6400062: Plane_001
+    6400064: Plane_002
+    6400066: Straight-L_003
+    6400068: Straight-L_004
+    6400070: Straight-L_005
+    6400072: Straight-L_006
+    6400074: Straight-L_007
+    6400076: Straight-M_001
+    6400078: Straight-M_002
+    6400080: Straight-M_003
+    6400082: Straight-S_001
+    6400084: Straight-S_002
+    6400086: Straight-S_003
+    6400088: Straight-S_004
+    6400090: Straight-S_005
+    6400092: Tee-LxL_001
+    6400094: Tee-MxM_001
+    6400096: Tee-SxS_001
     7400000: Default Take
     9500000: //RootNode
   materials:
